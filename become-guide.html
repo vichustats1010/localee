@@ -179,9 +179,58 @@
       });
     });
 
-    // Simple OTP send simulation
-    document.getElementById('send-otp').addEventListener('click', function() {
-      alert('OTP sent to your mobile number!');
+    // OTP generation + validation (simulated)
+    let currentOtp = null;
+    const otpInput = document.getElementById('otp');
+    const sendOtpBtn = document.getElementById('send-otp');
+    const formMessage = document.createElement('p');
+    formMessage.className = 'form-note';
+
+    const showMessage = (message, isError = false) => {
+      formMessage.textContent = message;
+      formMessage.style.color = isError ? '#d32f2f' : '#1e7e34';
+      if (!document.getElementById('formMessage')) {
+        formMessage.id = 'formMessage';
+        document.querySelector('.form-container').appendChild(formMessage);
+      }
+    };
+
+    const generateOtp = () => Math.floor(1000 + Math.random() * 9000).toString();
+
+    sendOtpBtn.addEventListener('click', () => {
+      const mobile = document.getElementById('mobile').value.trim();
+      if (!mobile || mobile.length < 10) {
+        showMessage('Please enter a valid mobile number first.', true);
+        return;
+      }
+
+      currentOtp = generateOtp();
+      otpInput.disabled = false;
+      otpInput.focus();
+      showMessage('OTP sent! (For demo purposes, you can use ' + currentOtp + ')');
+
+      // For demo purposes only: log the OTP in the console
+      console.log('DEBUG: OTP is', currentOtp);
+    });
+
+    const guideForm = document.querySelector('.form-container form');
+    guideForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!currentOtp) {
+        showMessage('Please request an OTP and verify your mobile number.', true);
+        return;
+      }
+
+      if (otpInput.value.trim() !== currentOtp) {
+        showMessage('The OTP entered is incorrect. Please try again.', true);
+        return;
+      }
+
+      showMessage('Thank you! Your application has been submitted. We will reach out soon.', false);
+      guideForm.reset();
+      otpInput.disabled = true;
+      currentOtp = null;
     });
   </script>
 </body>
