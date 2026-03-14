@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Guide — Localee</title>
+  <meta name="description" content="Join Localee as a local guide and share your passion for your hometown with travelers from around the world.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-compass logo-icon"></i>
+        <span>Local<span class="logo-accent">ee</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#experiences">Experiences</a></li>
+        <li><a href="index.html#guides">Top Guides</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="index.html#testimonials">Stories</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="become-guide.html" class="btn btn-outline btn-sm">Become a Guide</a>
+        <a href="index.html" class="btn btn-primary btn-sm">Explore Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Become Guide Form -->
+  <section class="section become-guide-form">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Join Our Community</span>
+        <h2 class="section-title">Become a Local Guide</h2>
+        <p class="section-desc">Share your local knowledge and passion with travelers. Turn your hometown expertise into an exciting side hustle.</p>
+      </div>
+      <div class="form-container">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Age *</label>
+            <input type="number" id="age" name="age" min="18" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <button type="button" class="btn btn-sm" id="send-otp">Send OTP</button>
+          </div>
+          <div class="form-group">
+            <label for="otp">OTP Verification *</label>
+            <input type="text" id="otp" name="otp" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Current Address *</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="id-proof">Upload Government ID Proof *</label>
+            <input type="file" id="id-proof" name="id-proof" accept="image/*,.pdf" required>
+          </div>
+          <div class="form-group">
+            <label for="selfie">Selfie with ID Proof *</label>
+            <input type="file" id="selfie" name="selfie" accept="image/*" required>
+          </div>
+          <div class="form-group">
+            <label for="guide-place">Which Place Do You Guide In? *</label>
+            <input type="text" id="guide-place" name="guide-place" required>
+          </div>
+          <div class="form-group">
+            <label for="hidden-places">What Hidden Places Do You Know? *</label>
+            <textarea id="hidden-places" name="hidden-places" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="languages">Languages You Can Speak *</label>
+            <input type="text" id="languages" name="languages" placeholder="e.g., English, Hindi, Tamil" required>
+          </div>
+          <div class="form-group">
+            <label>Any Experience on Guiding? *</label>
+            <div class="radio-group">
+              <label><input type="radio" name="experience" value="yes" required> Yes</label>
+              <label><input type="radio" name="experience" value="no"> No</label>
+            </div>
+          </div>
+          <div class="form-group" id="years-group" style="display: none;">
+            <label for="years">How Many Years of Experience?</label>
+            <input type="number" id="years" name="years" min="0">
+          </div>
+          <div class="form-group">
+            <label for="timings">Available Timings *</label>
+            <textarea id="timings" name="timings" rows="2" placeholder="e.g., Weekends 9AM-5PM, Weekdays evenings" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <i class="fas fa-compass"></i>
+            <span>Local<span class="logo-accent">ee</span></span>
+          </div>
+          <p>Connecting travelers with authentic local experiences through passionate guides who know their hometowns like no one else.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="index.html#experiences">Experiences</a>
+          <a href="index.html#guides">Top Guides</a>
+          <a href="index.html#destinations">Destinations</a>
+          <a href="index.html#testimonials">Stories</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Safety Guidelines</a>
+          <a href="#">Cancellation Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Guides</h4>
+          <a href="become-guide.html">Become a Guide</a>
+          <a href="#">Guide Resources</a>
+          <a href="#">Community Forum</a>
+          <a href="#">Success Stories</a>
+          <a href="#">Pricing</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Localee. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Handle experience radio buttons
+    const experienceRadios = document.querySelectorAll('input[name="experience"]');
+    const yearsGroup = document.getElementById('years-group');
+
+    experienceRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'yes') {
+          yearsGroup.style.display = 'block';
+          document.getElementById('years').required = true;
+        } else {
+          yearsGroup.style.display = 'none';
+          document.getElementById('years').required = false;
+        }
+      });
+    });
+
+    // Simple OTP send simulation
+    document.getElementById('send-otp').addEventListener('click', function() {
+      alert('OTP sent to your mobile number!');
+    });
+  </script>
+</body>
+</html>
