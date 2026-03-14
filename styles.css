@@ -865,14 +865,15 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
   gap: 12px;
 }
 .testimonial-author img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
   display: block;
-  border: 2px solid rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.2);
   background: rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .testimonial-author strong {
   display: block;
