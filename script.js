@@ -320,4 +320,61 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     openTranslator();
   });
+
+  // --- Hero search behavior ---
+  const searchLocation = document.getElementById('searchLocation');
+  const searchDate = document.getElementById('searchDate');
+  const searchGuests = document.getElementById('searchGuests');
+  const heroSearchBtn = document.getElementById('heroSearchBtn');
+  const tripDate = document.getElementById('tripDate');
+  const tripGuests = document.getElementById('tripGuests');
+
+  const setSearchDefaults = () => {
+    if (searchDate) {
+      const today = new Date().toISOString().split('T')[0];
+      searchDate.min = today;
+      if (!searchDate.value) searchDate.value = today;
+    }
+    if (searchGuests) {
+      searchGuests.min = '1';
+      if (!searchGuests.value) searchGuests.value = '1';
+    }
+  };
+
+  const openHonnavarFromSearch = () => {
+    openHonnavarSlide();
+    if (tripDate && searchDate) {
+      tripDate.textContent = searchDate.value || 'Any date';
+    }
+    if (tripGuests && searchGuests) {
+      tripGuests.textContent = searchGuests.value || '1';
+    }
+  };
+
+  const triggerSearch = () => {
+    const query = searchLocation?.value.trim().toLowerCase() || '';
+
+    if (query.includes('honnavar')) {
+      openHonnavarFromSearch();
+    } else {
+      const dest = document.getElementById('destinations');
+      if (dest) dest.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  heroSearchBtn?.addEventListener('click', (event) => {
+    event.preventDefault();
+    triggerSearch();
+  });
+
+  [searchLocation, searchDate, searchGuests].forEach((input) => {
+    input?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        triggerSearch();
+      }
+    });
+  });
+
+  setSearchDefaults();
 });

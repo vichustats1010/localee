@@ -77,19 +77,19 @@
         <div class="search-box">
           <div class="search-field">
             <i class="fas fa-location-dot"></i>
-            <input type="text" placeholder="Where do you want to explore today?">
+            <input id="searchLocation" type="text" placeholder="Where do you want to explore today?">
           </div>
           <div class="search-divider"></div>
           <div class="search-field">
             <i class="fas fa-calendar"></i>
-            <input type="text" placeholder="When?">
+            <input id="searchDate" type="date" placeholder="When?">
           </div>
           <div class="search-divider"></div>
           <div class="search-field">
             <i class="fas fa-users"></i>
-            <input type="text" placeholder="Guests">
+            <input id="searchGuests" type="number" min="1" placeholder="Guests">
           </div>
-          <button class="search-btn">
+          <button class="search-btn" id="heroSearchBtn">
             <i class="fas fa-search"></i>
             <span>Search</span>
           </button>
@@ -484,6 +484,10 @@
       <div class="slide-panel__header">
         <h2 id="honnavarSlideTitle">Honnavar</h2>
         <p class="slide-panel__subtitle">Explore the best spots around Honnavar — from coastal escapes to hidden waterfalls.</p>
+        <div class="slide-panel__meta">
+          <span><strong>When:</strong> <span id="tripDate">Any date</span></span>
+          <span><strong>Guests:</strong> <span id="tripGuests">1</span></span>
+        </div>
       </div>
       <div class="slide-panel__sections">
         <section class="slide-panel__section">
@@ -521,6 +525,7 @@
         </section>
         <section class="slide-panel__section">
           <h3>Gem Places</h3>
+          <p class="slide-panel__pick">Pick a Localee to share these hidden gems with.</p>
           <ul class="slide-panel__list">
             <li>
               <img src="Falls%201.jpeg" alt="Burude Falls" loading="lazy">
