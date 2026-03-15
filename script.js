@@ -321,6 +321,47 @@ document.addEventListener('DOMContentLoaded', () => {
     openTranslator();
   });
 
+  // --- Localee guide profile (Vignesh Kanna) ---
+  const openLocaleeBtn = document.getElementById('openLocaleeBtn');
+  const guideSlide = document.getElementById('guideSlide');
+  const guideBackdrop = document.getElementById('guideBackdrop');
+  const guideClose = document.getElementById('guideClose');
+  const guideBackBtn = document.getElementById('guideBackBtn');
+
+  const openGuideSlide = () => {
+    if (!guideSlide) return;
+    guideSlide.classList.add('open');
+    guideSlide.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeGuideSlide = () => {
+    if (!guideSlide) return;
+    guideSlide.classList.remove('open');
+    guideSlide.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  openLocaleeBtn?.addEventListener('click', () => {
+    closeHonnavarSlide();
+    openGuideSlide();
+  });
+
+  guideClose?.addEventListener('click', () => {
+    closeGuideSlide();
+    openHonnavarSlide();
+  });
+
+  guideBackdrop?.addEventListener('click', () => {
+    closeGuideSlide();
+    openHonnavarSlide();
+  });
+
+  guideBackBtn?.addEventListener('click', () => {
+    closeGuideSlide();
+    openHonnavarSlide();
+  });
+
   // --- Hero search behavior ---
   const searchLocation = document.getElementById('searchLocation');
   const searchDate = document.getElementById('searchDate');

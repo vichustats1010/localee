@@ -525,6 +525,7 @@
         <section class="slide-panel__section">
           <h3>Gem Places</h3>
           <p class="slide-panel__pick">Pick a Localee to share these hidden gems with.</p>
+          <button class="btn btn-primary btn-sm" id="openLocaleeBtn" type="button">Pick a Localee</button>
           <ul class="slide-panel__list">
             <li>
               <img src="Falls%201.jpeg" alt="Burude Falls" loading="lazy">
@@ -543,6 +544,52 @@
               <span>Murti Falls</span>
             </li>
           </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guide Profile Slide -->
+  <div class="slide-panel" id="guideSlide" aria-hidden="true">
+    <div class="slide-panel__backdrop" id="guideBackdrop" tabindex="-1"></div>
+    <div class="slide-panel__content" role="dialog" aria-modal="true" aria-labelledby="guideSlideTitle">
+      <button class="slide-panel__close" id="guideClose" aria-label="Close guide profile">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="slide-panel__header">
+        <h2 id="guideSlideTitle">Vignesh Kanna</h2>
+        <p class="slide-panel__subtitle">Your local guide for Honnavar — top-rated, friendly, and full of local stories.</p>
+      </div>
+      <div class="slide-panel__sections">
+        <section class="slide-panel__section guide-profile">
+          <div class="guide-profile__media">
+            <img src="guid-Vignesh Kanna.jpeg" alt="Vignesh Kanna" loading="lazy">
+          </div>
+          <div class="guide-profile__details">
+            <div class="guide-profile__stats">
+              <div>
+                <strong>Languages</strong>
+                <span>Kannada, English, Hindi</span>
+              </div>
+              <div>
+                <strong>Experience</strong>
+                <span>8 years guiding</span>
+              </div>
+              <div>
+                <strong>Price</strong>
+                <span>$20 / person</span>
+              </div>
+              <div>
+                <strong>Rating</strong>
+                <span>4.96 (289 reviews)</span>
+              </div>
+            </div>
+            <p class="guide-profile__bio">Vignesh knows every hidden beach, temple, and hill trail around Honnavar. He’s passionate about sharing local culture, food, and stories with travelers who want an authentic experience.</p>
+            <div class="guide-profile__actions">
+              <a href="#" class="btn btn-primary btn-lg">Book a Tour</a>
+              <button class="btn btn-outline btn-lg" id="guideBackBtn" type="button">Back to options</button>
+            </div>
+          </div>
         </section>
       </div>
     </div>
