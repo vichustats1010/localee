@@ -123,4 +123,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  // --- Honnavar detail slide (modal panel) ---
+  const honnavarCard = document.querySelector('[data-destination="honnavar"]');
+  const honnavarSlide = document.getElementById('honnavarSlide');
+  const honnavarBackdrop = document.getElementById('honnavarBackdrop');
+  const honnavarClose = document.getElementById('honnavarClose');
+
+  const openHonnavarSlide = () => {
+    honnavarSlide.classList.add('open');
+    honnavarSlide.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    honnavarClose?.focus();
+  };
+
+  const closeHonnavarSlide = () => {
+    honnavarSlide.classList.remove('open');
+    honnavarSlide.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  if (honnavarCard && honnavarSlide && honnavarBackdrop && honnavarClose) {
+    honnavarCard.addEventListener('click', openHonnavarSlide);
+    honnavarClose.addEventListener('click', closeHonnavarSlide);
+    honnavarBackdrop.addEventListener('click', closeHonnavarSlide);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && honnavarSlide.classList.contains('open')) {
+        closeHonnavarSlide();
+      }
+    });
+  }
 });

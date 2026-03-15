@@ -822,6 +822,117 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
   height: 100%;
 }
 
+/* ===== SLIDE PANEL (MODAL) ===== */
+.slide-panel {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: stretch;
+  justify-content: flex-end;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.slide-panel.open {
+  display: flex;
+}
+
+.slide-panel__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 26, 0.65);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.slide-panel.open .slide-panel__backdrop {
+  opacity: 1;
+}
+
+.slide-panel__content {
+  position: relative;
+  width: min(560px, 100%);
+  max-width: 560px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
+  box-shadow: -16px 0 40px rgba(0,0,0,0.25);
+  padding: 32px 28px;
+  overflow-y: auto;
+  transform: translateX(115%);
+  transition: transform var(--transition);
+}
+
+.slide-panel.open .slide-panel__content {
+  transform: translateX(0);
+}
+
+.slide-panel__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color: var(--gray-700);
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.slide-panel__close:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,1);
+}
+
+.slide-panel__header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 8px;
+}
+
+.slide-panel__subtitle {
+  margin-bottom: 24px;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.slide-panel__sections {
+  display: grid;
+  gap: 24px;
+}
+
+.slide-panel__section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.slide-panel__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.slide-panel__list li {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: rgba(108, 60, 225, 0.08);
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .slide-panel__content {
+    width: 100%;
+  }
+}
+
 /* ===== TESTIMONIALS ===== */
 .testimonials { background: var(--white); }
 .testimonials-grid {
