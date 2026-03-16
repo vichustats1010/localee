@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
     openTranslator();
   });
 
-  // --- Localee guide profile (Vignesh Kanna) ---
+  // --- Localee guide profile (Vichu) ---
   const openLocaleeBtn = document.getElementById('openLocaleeBtn');
   const guideSlide = document.getElementById('guideSlide');
   const guideBackdrop = document.getElementById('guideBackdrop');
